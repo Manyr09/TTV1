@@ -15,7 +15,9 @@ class Manager {
 
     public Task getTaskById(int id) {
         Task task = tasks.get(id);
-        return task == null ? null : new Task(task.getName(), task.getDescription(), task.getStatus());
+        if (task == null){
+            return null;
+        } else return new Task(task.getName(), task.getDescription(), task.getStatus());
     }
 
     public Epic getEpicById(int id) {
